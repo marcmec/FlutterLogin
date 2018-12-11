@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:meulogin/src/pagelogin.dart';
+import 'package:meulogin/src/homepage.dart';
 
-void main() => runApp(loginApp());
+void main() => runApp(LoginApp());
 
-class loginApp extends StatelessWidget {
+class LoginApp extends StatelessWidget {
   // This widget is the root of your application.
+  final routes = <String, WidgetBuilder>{
+    Pagelogin.tag: (context)=> Pagelogin(),
+    HomePage.tag:(context)=> HomePage(),
+  
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +19,9 @@ class loginApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: pagelogin(),
+      home: Pagelogin(),
+      routes: routes,
+      
     );
   }
 

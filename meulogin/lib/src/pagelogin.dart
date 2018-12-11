@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:meulogin/src/homepage.dart';
 
 
 
-class pagelogin   extends StatefulWidget {
+class Pagelogin extends StatefulWidget {
+  static final tag= 'page-login';
   @override
   _StatePage createState() => _StatePage();
+  
 }
 
-class _StatePage extends State<pagelogin> {
+class _StatePage extends State<Pagelogin> {
   @override
   Widget build(BuildContext context) {
 
+    final _fotoperfil= Hero(
+      tag:'hero',
+      child:CircleAvatar(
+      radius:50.0,
+      child:Image.asset('assets/stark.jpg'),
+      )
+      );
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -40,30 +50,33 @@ class _StatePage extends State<pagelogin> {
 
     );
     final loginbutton =Material(
-      color: Colors.green,
+      color: Colors.blueGrey,
       borderRadius: BorderRadius.circular(30.0),
-      shadowColor: Colors.lightGreenAccent.shade100,
+      shadowColor: Colors.grey.shade100,
       elevation: 7.0,
       child: MaterialButton(
         minWidth: 200.0,
         height: 42,
-        onPressed: (){},
+        onPressed: (){
+          Navigator.of(context).pushNamed(HomePage.tag);
+        },
         child: Text('Login', style:TextStyle(color: Colors.black)),
 
       ),
     );
     final esqueciLabel = FlatButton(
       child: Text('Esqueci a senha',style: TextStyle(color:Colors.black38)),
-      onPressed: (){},
+      onPressed: (){
+      },
     );
     return Scaffold(
-    backgroundColor: Colors.greenAccent,
+    backgroundColor: Colors.blueAccent,
     body: Center(
       child: ListView(
         shrinkWrap: true,
         padding:EdgeInsets.only(left:24.0, right:24.0),
         children: <Widget>[
-          CircleAvatar(backgroundColor: Colors.white, radius: 50.0,),
+          _fotoperfil,
           SizedBox(height: 49.0),
           email,
           SizedBox(height: 7.0),
