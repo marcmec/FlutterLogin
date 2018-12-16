@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meulogin/src/homepage.dart';
+import 'package:meulogin/src/animation.dart';
 
 
 
@@ -58,7 +59,7 @@ class _StatePage extends State<Pagelogin> {
         minWidth: 200.0,
         height: 42,
         onPressed: (){
-          Navigator.of(context).pushNamed(HomePage.tag);
+          Navigator.of(context).pushNamed(MeuApp.tag);
         },
         child: Text('Login', style:TextStyle(color: Colors.black)),
 

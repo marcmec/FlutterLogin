@@ -40,6 +40,8 @@ flutter:
   assets:
   - assets/stark.jpg
   - assets/iron.png
+  - assets/marca.flr
+  - assets/Pizza Slice.flr
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
